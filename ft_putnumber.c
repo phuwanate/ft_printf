@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:36:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/15 23:31:56 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/15 23:38:43 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_putnbr(int nb, int *len_str)
 {
 	if (nb == -2147483648)
-	{
 		(*len_str) += write(1, "-2147483648", 11);
-	}
 	else if (nb < 0)
 	{
 		(*len_str) += write(1, "-", 1);
@@ -30,9 +28,7 @@ void	ft_putnbr(int nb, int *len_str)
 		ft_putnbr(nb % 10, len_str);
 	}
 	else
-	{
 		ft_putchr((nb + '0'), len_str);
-	}
 }
 
 void	ft_putptr(uintptr_t nb, int *len_str)
