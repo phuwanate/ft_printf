@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:30:49 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/14 23:18:26 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/15 23:21:33 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_checkformat(char c, va_list *ap, int *len_str)
 	else if (c == 's')
 		ft_putstr(va_arg(*ap, char *), len_str);
 	else if (c == 'p')
-		ft_putptr(va_arg(*ap, unsigned int), len_str);
+		ft_putptr(va_arg(*ap, uintptr_t), len_str);
 	else if (c == 'x')
 		ft_puthex(va_arg(*ap, unsigned int), len_str, 'x');
 	else if (c == 'X')

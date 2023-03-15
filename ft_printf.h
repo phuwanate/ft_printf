@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:34:56 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/14 23:23:28 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:19:34 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_checkformat(char c, va_list *ap, int *len_str);
 int		ft_printf(const char *str, ...);
 void	ft_putstr(char *s, int *len_str);
 void	ft_putnbr(int nb, int *len_str);
-void	ft_putptr(unsigned int nb, int *len_str);
+void	ft_putptr(uintptr_t nb, int *len_str);
 void	ft_puthex(unsigned int nb, int *len_str, char check_x);
 void	ft_putuns_nbr(unsigned int nb, int *len_str);
 

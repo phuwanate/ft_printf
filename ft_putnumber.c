@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:36:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/15 03:34:42 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/15 23:25:47 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ void	ft_putnbr(int nb, int *len_str)
 {
 	if (nb == -2147483648)
 	{
-		write(1, "-2147483648", 11);
-		*len_str = *len_str + 11;
+		*len_str += write(1, "-2147483648", 11);
 	}
 	else if (nb < 0)
 	{
-		write(1, "-", 1);
-		(*len_str)++;
+		*len_str += write(1, "-", 1);
 		nb *= -1;
 		ft_putnbr(nb, len_str);
 	}
@@ -37,15 +35,14 @@ void	ft_putnbr(int nb, int *len_str)
 	}
 }
 
-void	ft_putptr(unsigned int nb, int *len_str)
+void	ft_putptr(uintptr_t nb, int *len_str)
 {
 	int		i;
 	char	*hexnbr;
-	char	str[25];
+	char	str[16];
 
 	hexnbr = "0123456789abcdef";
-	write(1, "0x", 2);
-	*len_str = *len_str + 2;
+	(*len_str) += write(1, "0x", 2);
 	if (nb == 0)
 	{
 		ft_putchr('0', len_str);
@@ -66,7 +63,7 @@ void	ft_puthex(unsigned int nb, int *len_str, char check_x)
 {
 	int		i;
 	char	*hexnbr;
-	char	str[25];
+	char	str[16];
 
 	if (check_x == 'x')
 		hexnbr = "0123456789abcdef";
